@@ -28,6 +28,10 @@ export default function Main()
            <div className="ga_image"> 
                 <img className="cat_3" width="80%" src={cat_3}></img>
                 <ProgressBar className="gauge"variant="info" now={60} label={`${60}%`}  />
+                <br></br>
+                <Link to="/item">
+                        <Button className="itemButton" variant="dark" size="lg" >햅비냥 꾸미기</Button>{' '}
+                </Link>
             </div>
             
         </div>
