@@ -24,7 +24,7 @@ export default function SurveyList() {
   const nextID = parseInt(surveyID) + 1;
   const [happ, setHapp] = useState(0);
   const handleWeight = (k) => {
-    console.log('시발'+k);
+    console.log(k);
     // setHapp((current) => current + i * parseInt(surveys[surveyID].wei))
   };
 
