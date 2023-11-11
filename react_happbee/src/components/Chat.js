@@ -42,6 +42,7 @@ function UserList({users}) {
 }
 
 export default function Chat() {
+
   const [userInput, setUserInput] = useState('');
   const [users, setUsers] = useState([]);
   const nextId = useRef(1);
@@ -61,6 +62,7 @@ export default function Chat() {
         body: JSON.stringify({ user_input: userInput })
       }); // Response Closure
 
+
       const data = await response.json();
       const user = {
         id: nextId.current,
@@ -70,6 +72,7 @@ export default function Chat() {
       setUsers([...users, user]);//(users.concat(user));
       setUserInput("");
       nextId.current += 1;
+
     } catch (error) {
       console.error('Error:', error);
     }
