@@ -1,38 +1,120 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 100;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100px) scale(.2);
+  }
+
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 .App {
   text-align: center;
+  background: #f2d99f;
+  height: 100vh;
+}
+.normal {
+  font-weight: 400
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bold {
+  font-weight: 700
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bolder {
+  font-weight: 800
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.light {
+  font-weight: 300
 }
 
-.App-link {
-  color: #61dafb;
+.font-big{
+  font-size: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Nav{
+  margin:35px 15px 35px 35px;
+  height: 92vh;
+  border-radius: 25px;
+  box-shadow: 4px 4px 5px 2px rgba(193, 193, 193, 0.38);
+}
+
+
+.Content{
+  animation: slideDown .8s ease forwards;
+  border-radius: 25px;
+  box-shadow: 0px 4px 5px 2px rgba(193, 193, 193, 0.38);
+  width: 80vw;
+  height: 92vh;
+  background-color: #ffffff;
+  margin: 35px;
+  padding: 100px;
+}
+
+.mainLogo{
+  animation: fadeIn 5s forwards;
+}
+
+.surveyStart{
+  animation: fadeIn 10s forwards;
+}
+
+.surveyButton{
+  animation: slideUp 1s ease-in-out forwards;
+  border-radius: 25px;
+}
+
+.nav-link{
+  font-size:15px;
 }

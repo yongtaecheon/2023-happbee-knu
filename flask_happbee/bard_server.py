@@ -18,5 +18,13 @@ def ask_bard():
 
     return jsonify({"answer": answer})
 
+@app.route('/survey/0', methods=['GET'])
+def get_data():
+    data ={ { 'id': 1, 'qu': '1. 나는 자신에 별로 만족하지 않는다.', 'wei': 3 },
+            { 'id': 2, 'qu': '2. 나는 다른 사람들에 대해 크게 흥미가 있다.', 'wei': 2 },
+            { 'id': 3, 'qu': '3. 나는 삶이 아주 보람 있다고 느낀다.', 'wei': 5 }}
+    print(data)
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run()
