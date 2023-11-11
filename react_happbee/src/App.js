@@ -1,48 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import SurveyList from './components/SurveyList'
+import Survey from './components/Survey';
+import Main from './components/Main';
+import Nav from './components/Nav';
+import Chat from './components/Chat';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
-//useEffect : 웹을 처음 실행할 때만 데이터를 받아오는 작업을 실행
-//fetch : 주소에 있는 데이터 GET
-// response 객체의 json() 이용하여 json 데이터를 객체로 변화
-export function App() {
-  const [userInput, setUserInput] = useState('');
-  const [answer, setAnswer] = useState('');
-  // const [userName, setUserName] = useState('');
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch('/ask', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ user_input: userInput })
-      });
 
-      const data = await response.json();
-      setAnswer(data.answer);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+export default function App() {
 
   return (
-    <div className="App">
-      <h1>HAPPBEE와 대화하기</h1>
-      {/* <input
-              type="text"
-              placeholder="내 이름"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            /> */}
-      {/* <button onClick={handleSubmit}>설정하기</button> */}
-      <input
-        type="text"
-        placeholder="Ask a question..."
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)} />
-      <button onClick={handleSubmit}>Ask</button>
-      <div>
-        <strong>Answer:</strong> {answer}
+    <div className="d-flex App bold">
+      <Nav/>
+      <div className="Content bolder">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Survey />}/>
+            <Route path="survey/:surveyID" element={<SurveyList />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/chat" element={<Chat />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );
+  
 }
