@@ -1,12 +1,11 @@
 import React, { useState, useRef } from 'react';
 
-// import { Button } from 'react-bootstrap';
 //useEffect : 웹을 처음 실행할 때만 데이터를 받아오는 작업을 실행
 //fetch : 주소에 있는 데이터 GET
 // response 객체의 json() 이용하여 json 데이터를 객체로 변화
 function CreateUser({ question, onChange, onCreate }) {
   return (
-    <div>
+    <div className="ChatInputContainer">
       <input
         type="text"
         placeholders="Question"
@@ -23,12 +22,25 @@ function UserList({users}) {
     <ul>
       {users.map((user) => (
         <li key={user.id}>
-          Question: {user.question}, Answer: {user.answer}
-        </li>
+          <div className="ChatContent">
+          {/* User's message */}
+            <div className="ChatMessage UserMessage">
+              <div className="SenderMessageBubble">{user.question}</div>
+            </div>
+
+          {/* Happbee's response */}
+          <div className="ChatMessage HappbeeMessage">
+            <div className="GiverMessageBubble">{user.answer}</div>
+          </div>
+        </div>
+
+      </li>
       ))}
     </ul>
+
   );
 }
+
 export default function Chat() {
   const [userInput, setUserInput] = useState('');
   const [users, setUsers] = useState([]);
@@ -47,7 +59,7 @@ export default function Chat() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ user_input: userInput })
-      });
+      }); // Response Closure
 
       const data = await response.json();
       const user = {
@@ -58,21 +70,30 @@ export default function Chat() {
       setUsers([...users, user]);//(users.concat(user));
       setUserInput("");
       nextId.current += 1;
-      console.log(users)
     } catch (error) {
       console.error('Error:', error);
     }
   };
-
+  
   return (
-    <div className="Chat">
-      <h1>HAPPBEE와 대화하기</h1>
-      <CreateUser
+    <div className="ChatContainer">
+      <div className="ProfileContainer">
+        <div className="ProfilePicture"></div>
+        <div className="ProfileInfo">
+          <h2>HAPPBEE</h2>
+        </div>
+      </div>
+
+      <div className="ChatContent">
+        <UserList users={users}/>
+      </div>
+      <div className="ChatInputContainer">
+        <CreateUser
         question = {userInput}
         onChange = {handleChange}
         onCreate = {handleSubmit}
-      />
-      <UserList users = {users} />
+        />
+      </div>
     </div>
   );
 }
