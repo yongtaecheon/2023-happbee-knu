@@ -17,6 +17,7 @@ function CreateUser({ question, onChange, onCreate }) {
     </div>
   );
 }
+
 function UserList({users}) {
   return (
     <ul>
@@ -25,12 +26,16 @@ function UserList({users}) {
           <div className="ChatContent">
           {/* User's message */}
             <div className="ChatMessage UserMessage">
+
               <div className="SenderMessageBubble">{user.question}</div>
+
             </div>
 
           {/* Happbee's response */}
           <div className="ChatMessage HappbeeMessage">
+
             <div className="GiverMessageBubble">{user.answer}</div>
+
           </div>
         </div>
 

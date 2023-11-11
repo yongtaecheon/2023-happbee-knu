@@ -9,6 +9,7 @@ export default function SurveyList() {
     fetchData();
   }, []);
 
+
   const fetchData = async () => {
     try {
       const response = await fetch('/request-survey'); // Update the URL based on your Flask server
@@ -50,6 +51,7 @@ export default function SurveyList() {
       <p className="font-big bolder"> {surveys && surveys[`${surveyID}`].qu} </p> 
       <p className="normal">순간적으로 떠오른 느낌에 따라 답해주세요.</p>
       {buttons()}
+
     </div>
   );
 }
