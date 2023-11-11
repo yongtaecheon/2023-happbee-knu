@@ -6,8 +6,8 @@ import React, { useState } from 'react';
 //fetch : 주소에 있는 데이터 GET
 // response 객체의 json() 이용하여 json 데이터를 객체로 변화
 export default function Chat() {
-  const [userInput, setUserInput] = useState('');
-  const [answer, setAnswer] = useState('');
+  const [userInput, setUserInput] = useState(''); //초기값 noll
+  const [answer, setAnswer] = useState(''); //바뀌는 값, 설정할 변수와 설정을 바꿔주는 함수
   // const [userName, setUserName] = useState('');
   const handleSubmit = async () => {
     try {
@@ -19,8 +19,8 @@ export default function Chat() {
         body: JSON.stringify({ user_input: userInput })
       });
 
-      const data = await response.json();
-      setAnswer(data.answer);
+      const data = await response.json(); 
+      setAnswer(data.answer); 
     } catch (error) {
       console.error('Error:', error);
     }
