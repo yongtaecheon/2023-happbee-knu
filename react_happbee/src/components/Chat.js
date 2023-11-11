@@ -1,14 +1,57 @@
-import React, { useState } from 'react';
-// import { Button } from 'react-bootstrap';
-
+import React, { useState, useRef } from 'react';
 
 //useEffect : 웹을 처음 실행할 때만 데이터를 받아오는 작업을 실행
 //fetch : 주소에 있는 데이터 GET
 // response 객체의 json() 이용하여 json 데이터를 객체로 변화
+function CreateUser({ question, onChange, onCreate }) {
+  return (
+    <div className="ChatInputContainer">
+      <input
+        type="text"
+        placeholders="Question"
+        name="question"
+        value={question}
+        onChange={onChange}
+      />
+      <button onClick={onCreate}>Ask</button>
+    </div>
+  );
+}
+function UserList({users}) {
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>
+          <div className="ChatContent">
+          {/* User's message */}
+            <div className="ChatMessage UserMessage">
+              <div className="SenderMessageBubble">{user.question}</div>
+            </div>
+
+          {/* Happbee's response */}
+          <div className="ChatMessage HappbeeMessage">
+            <div className="GiverMessageBubble">{user.answer}</div>
+          </div>
+        </div>
+
+      </li>
+      ))}
+    </ul>
+
+  );
+}
+
 export default function Chat() {
-  const [userInput, setUserInput] = useState(''); //초기값 noll
-  const [answer, setAnswer] = useState(''); //바뀌는 값, 설정할 변수와 설정을 바꿔주는 함수
-  // const [userName, setUserName] = useState('');
+
+  const [userInput, setUserInput] = useState('');
+  const [users, setUsers] = useState([]);
+  const nextId = useRef(1);
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setUserInput(value);
+  };
+
   const handleSubmit = async () => {
     try {
       const response = await fetch('/ask', {
@@ -17,34 +60,42 @@ export default function Chat() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ user_input: userInput })
-      });
+      }); // Response Closure
 
-      const data = await response.json(); 
-      setAnswer(data.answer); 
+
+      const data = await response.json();
+      const user = {
+        id: nextId.current,
+        question: userInput,
+        answer: data.answer,
+      };
+      setUsers([...users, user]);//(users.concat(user));
+      setUserInput("");
+      nextId.current += 1;
+
     } catch (error) {
       console.error('Error:', error);
     }
   };
-
+  
   return (
-    <div className="Chat">
-      <h1>HAPPBEE와 대화하기</h1>
-      {/* <input
-              type="text"
-              placeholder="내 이름"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            /> */}
-      {/* <button onClick={handleSubmit}>설정하기</button> */}
-      <input
-        type="text"
-        placeholder="Ask a question..."
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)} />
-      <button onClick={handleSubmit}>Ask</button>
-      <div>
-        <strong>Question:</strong> {userInput}
-        <strong>Answer:</strong> {answer}
+    <div className="ChatContainer">
+      <div className="ProfileContainer">
+        <div className="ProfilePicture"></div>
+        <div className="ProfileInfo">
+          <h2>HAPPBEE</h2>
+        </div>
+      </div>
+
+      <div className="ChatContent">
+        <UserList users={users}/>
+      </div>
+      <div className="ChatInputContainer">
+        <CreateUser
+        question = {userInput}
+        onChange = {handleChange}
+        onCreate = {handleSubmit}
+        />
       </div>
     </div>
   );
