@@ -2,7 +2,5 @@
 .DS_Store
 react_happbee/node_modules
 venv_happbee/
-.gitignore
-flask_happbee/chatGPT_server.py
-/test/*
-*.json
+package-lock.json
+
