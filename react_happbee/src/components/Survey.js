@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import mainLogo from '../assets/main_logo.png'
 
+
 export default function Survey() {
     return (
         <div className="Survey">
