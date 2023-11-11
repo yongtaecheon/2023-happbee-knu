@@ -22,31 +22,34 @@ export default function SurveyList() {
 
   const { surveyID } = useParams();
   const nextID = parseInt(surveyID) + 1;
+  const [happ, setHapp] = useState(0);
+  const handleWeight = (k) => {
+    console.log('시발'+k);
+    // setHapp((current) => current + i * parseInt(surveys[surveyID].wei))
+  };
 
-  // function buttons() {
-  //   const arr = [];
-  //   for (let i = 0; i <= 10; i++){
-  //     arr.push(
-  //       <Link to={`/survey/${nextID}`}>
-  //           <Button className="surveyButton" variant="secondary" size="lg">{i}</Button>&nbsp;&nbsp;
-  //       </Link>
-  //     );
-  //   }
-  //   return arr;
-  // }
+  function buttons() {
+    const arr = [];
+    for (let i = 1; i <= 10; i++){
+      arr.push(
+        <Link to={`/survey/${nextID}`}>
+          <Button className="surveyButton m-2" variant="secondary" size="lg" onClick={handleWeight(i)}>{i}</Button>
+        </Link>
+      );
+    }
+    return arr;
+  }
 
   return (
     <div className="SurveyList">
-      {surveys[`${surveyID}`].qu}
-      {/* <Button variant="dark" size="sm">
-            Happbee 지수 {surveys[surveyID].id} / 10
+      <p>현재 행복지수 {happ}</p>
+      <Button variant="dark" size="sm">
+            Happbee 지수 {nextID} / 14
       </Button>
-      <p className="font-big bolder"> {surveys[surveyID].qu} </p>
+      {/* a&&b : a가 참일때 b를 렌더링함 */}
+      <p className="font-big bolder"> {surveys && surveys[`${surveyID}`].qu} </p> 
       <p className="normal">순간적으로 떠오른 느낌에 따라 답해주세요.</p>
       {buttons()}
-      {/* <Link to={`/survey/${nextID}`}>
-          <Button variant="primary">Next Question</Button>{' '}
-      </Link> */}
     </div>
   );
 }

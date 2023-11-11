@@ -93,6 +93,7 @@
 .Nav{
   margin:35px 15px 35px 35px;
   height: 92vh;
+  width: 10vw;
   border-radius: 25px;
   box-shadow: 4px 4px 5px 2px rgba(193, 193, 193, 0.38);
 }
@@ -119,12 +120,14 @@
 
 .surveyButton{
   animation: slideUp 1s ease-in-out forwards;
+  font-size: 30px;
   border-radius: 25px;
 }
 
 .nav-link{
   font-size:15px;
 }
+
 .title_But{
   margin: 0px 50px 0px 0px;
 }
@@ -146,4 +149,8 @@
 }
 .itemButton{
   margin: 55px 0px 0px 0px;
+}
+
+i{
+  font-size:35px;
 }

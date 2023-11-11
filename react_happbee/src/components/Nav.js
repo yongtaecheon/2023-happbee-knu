@@ -9,37 +9,32 @@ export default function Nav() {
         </a>
         <hr/>
       <ul className="nav nav-pills flex-column mb-auto">
-          <li className="nav-item">
+          <li className="nav-item mt-5 mb-5">
             <a href="/" className="nav-link active link" aria-current="page">
               <i class="bi bi-house-door"></i>
-              &nbsp;홈
+              <br></br>홈
             </a>
           </li>
-          <li>
+          <li className="nav-item mb-5">
             <a href="/chat" className="nav-link link-dark">
               <i class="bi bi-chat-dots"></i>
-              &nbsp;채팅
+              <br></br>채팅
             </a>
           </li>
-          <li>
+          <li className="nav-item mb-5">
             <a href="/survey/0" className="nav-link link-dark">
               <i class="bi bi-clipboard2-heart"></i>
-              &nbsp;햅비지수
+              <br></br>햅비지수
             </a>
           </li>
-          <li>
+          <li className="nav-item mb-5">
             <a href="/hosp" className="nav-link link-dark">
               <i class="bi bi-heart-pulse"></i>
-              &nbsp;전문가와 상담하기
+              <br></br>병원과 <br></br>상담하기
             </a>
           </li>
         </ul>
         <hr/>
-        <div className="dropdown">
-          <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>mdo</strong>
-          </a>
-        </div>
       </div>
     );
 

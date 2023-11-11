@@ -5,6 +5,8 @@ import Main from './components/Main';
 import Nav from './components/Nav';
 import Chat from './components/Chat';
 import Item from './components/Item'
+import Hosp from './components/Hosp';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -23,6 +25,7 @@ export default function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/item" element={<Item />} />
+            <Route path="/hosp" element={<Hosp />} />
           </Routes>
         </BrowserRouter>
       </div>
