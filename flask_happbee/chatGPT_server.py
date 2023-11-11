@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import random
 import json
+from geopy.geocoders import Nominatim
+from bs4 import BeautifulSoup # pip install beautifulsoup4
 
 load_dotenv()
 
@@ -12,7 +14,7 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  api_key="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"# os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
+  api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
 )
 
 @app.route('/ask', methods=['POST'])
@@ -83,6 +85,76 @@ def send_survey():
   print('survey list loaded')
   return jsonify(sur)
 
+#Youtube Geolocation API를 활용하여 로드
+def get_current_location():
+    # YOUTUBE API 키
+    API_KEY = ['AIzaSyCcis4wzheGUE8j9hRQ9xp43w7LREedD6M',
+            'AIzaSyCybUkLvjkdaWFgdc7GtVdnn-vgal0g0mg']
+    # 현재 위치 요청
+    try:
+        url = "https://www.googleapis.com/geolocation/v1/geolocate?key={}".format(API_KEY[0])
+    except: #API 할당량 다차면 다른 키 가져오기
+        url = "https://www.googleapis.com/geolocation/v1/geolocate?key={}".format(API_KEY[1])
+    response = requests.post(url)
+
+    # 요청이 성공하면 응답을 처리
+    if response.status_code == 200:
+        # 위도와 경도를 추출
+        latitude = response.json()["location"]["lat"]
+        longitude = response.json()["location"]["lng"]
+        return latitude, longitude
+    else:
+        # 요청이 실패하면 오류를 출력
+        print("요청실패 코드{}오류".format(response.status_code))
+        return None, None
+#위도 경도를 주소로 변환
+def latalt_to_addr(lat, lon):
+    coords = f"{lat},{lon}"
+    geolocator = Nominatim(user_agent = 'South Korea')
+    location = geolocator.reverse(coords)
+    addr = location.address
+    addr=addr.split(',')[:-2]
+    addr.reverse()
+    addr = ' '.join(s for s in addr)
+    return addr
+
+def get_hospital_list(location):
+  hoslist = []
+
+  url = f'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query={location}+근처+심리상담센터'
+
+  response = requests.get(url)
+
+  if response.status_code == 200:
+    html = response.text
+    soup = BeautifulSoup(html, 'html.parser')
+    query = soup.select('div.qbGlu')
+    
+    for q in query:
+        title = q.select_one('span.YwYLL').text
+        phone_number = q.select_one('div.mqM2N.l8afP').text
+        address = soup.select_one('span.Pb4bU').text
+
+        numeric_phone_number = ''.join(filter(lambda x: x.isdigit() or x =='-', phone_number))
+
+        hoslist.append((title, numeric_phone_number, address))
+        # print(title)
+        # print(numeric_phone_number)
+        # print(address)
+  else : 
+    print(response.status_code)
+
+  return hoslist
+
+
+@app.route('/request-hosp', methods=['GET'])
+def send_hosp():
+  lat, lon = get_current_location()
+  address = latalt_to_addr(lat, lon)
+  hospital = get_hospital_list(address)
+  hospital.insert(0,address)
+  print(hospital)
+  return jsonify(hospital)
 
 
 if __name__ == '__main__':
