@@ -206,6 +206,7 @@ button:hover {
   padding: 10px;
   background-color: #f0f0f0;
   display: flex;
+  max-height:fit-content;
   align-items: center;
   justify-content: space-between;
 }
@@ -217,8 +218,10 @@ button:hover {
   left: 0;
   width: 100%;
   padding: 10px;
+  max-height:fit-content;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 820px; /* Prompt height */
   height: 100vh; /* Full height of the viewport */
 }
 
@@ -242,3 +245,8 @@ button:hover {
   margin-left: 10px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
