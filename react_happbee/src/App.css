@@ -313,3 +313,7 @@ ul {
   width: 500px; /* Adjust as needed */
   /* Add other chart-specific styles here */
 }
+
+.card {
+  width: 60%;
+}
