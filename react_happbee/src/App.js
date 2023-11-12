@@ -13,13 +13,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
-
-
 export default function App() {
 
   return (
     <div className="d-flex App bold">
-      <Nav/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Nav />} />
+            <Route path="survey/:surveyID" element={<Nav />} />
+            <Route path="/main" element={<Nav />} />
+            <Route path="/chat" element={<Nav />} />
+            <Route path="/item" element={<Nav />} />
+            <Route path="/hosp" element={<Nav />} />
+            <Route path="/result" element={<Nav />} />
+        </Routes>
+      </BrowserRouter>
       <div className="Content bolder">
         <BrowserRouter>
           <Routes>

@@ -57,3 +57,27 @@ main {
 .scrollarea {
   overflow-y: auto;
 }
+
+.nav-item a.nav-link {
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nav-item a.nav-link:hover {
+  background-color: #FFA500;
+}
+
+.active-button {
+  background-color: #D2691E;
+  color: white;
+  border: 1px solid #D2691E;
+}
+
+.active-button:hover {
+  background-color: #FFA500;
+}
+
+.active-link {
+  background-color: #D2691E;
+}
