@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 import requests
 import os
 from dotenv import load_dotenv
@@ -15,10 +15,27 @@ app = Flask(__name__)
 # set api key
 client = OpenAI(
 
-  api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
+  api_key='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'  # this is also the default, it can be omitted
 )
 
 chat_count = 0
+current_happ = 150
+
+
+
+@app.route('/cat', methods=['GET'])
+def get_cat_status():
+    global current_happ
+    return current_happ
+
+@app.route('/save_cat', methods=['GET'])
+def save_data():
+    happ = request.args.get('happ')
+    global current_happ
+    current_happ = happ
+    print(current_happ)
+    return current_happ
+
 
 @app.route('/request-gauge-level', methods=['GET'])
 def gauge_level():
