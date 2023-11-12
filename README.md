@@ -2,7 +2,7 @@
 
 
 <div align="center">
-  <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/42794553/4b3e8352-9e7e-46a7-9734-3960ec9912d2" width="80%">
+  <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/42794553/4b3e8352-9e7e-46a7-9734-3960ec9912d2" width="50%">
 </div>
 
 #1. TEAM: HAPPBEE
