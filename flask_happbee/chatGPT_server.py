@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
+  api_key="",  # this is also the default, it can be omitted
 )
 
 @app.route('/ask', methods=['POST'])
@@ -25,7 +25,18 @@ def chatGPT():
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            #{"role": "system", "content": "너는 문자를 작성하는 문자 마법시이다. 조건에 맞게 문자를 최대한 길게 작성하라."},
+            # {"role": "system", "content":"너는 이제부터 공감하는 챗봇이야.  내가 말하는 조건을 지켜서 대화를 해줘\n\
+            #                       첫 번째 조건, 동갑 친구에게 말하는 것처럼 반말로 말해줘.\n\
+            #                       두 번째 조건, 시작 멘트는 간결하게 오늘 하루 어땠어? 같은 인사말로 시작해줘\n\
+            #                       세 번째 조건, 사용자의 감정에 공감을 해줘.\n\
+            #                       네 번째 조건, 답변은 간결하게 말해줘.\n\
+            #                       다섯 번째 조건,  사용자가 부정적인 감정의 말을 한다면 거기에 대해 공감을 해주고 행복해질 수 있는 방법에 대해 말을 해줘.\n\
+            #                       여섯 번째 조건, 사용자가 긍정적인 감정의 말을 한다면 거기에 긍정적으로 공감해줘." },
+            {"role": "system", "content":"너는 이제부터 사람들의 이야기를 들어주고 공감해주는 역할이야.\n\
+                                          첫 시작은 ""오늘 하루는 어땠어?"" 등 안부를 묻는 질문으로 시작해줘\n\
+                                          답변은 최대한 간결하게 부탁해\n\
+                                          친구처럼 구어체를 사용해서 대화를 이어나가야해. 반말로 해줘!!!!!!!!!\n\
+                                          항상 공감해주는 자세로 사람들의 의견을 들어줘.해결책 보다는 공감!!!!!!!위주로 답변해줘" },
             {"role": "user",
               "content": f"${userInput}"},
         ],
@@ -77,7 +88,7 @@ def load_survey(sur_dic, index):
 
 @app.route('/request-survey', methods=['GET'])
 def send_survey():
-  file_path= './survey_list.json'
+  file_path= 'survey_list.json'
   with open(file_path,'r', encoding='UTF8') as f:
     text_dic=json.load(f)
   idx = ["경제","관계","자유","감정","삶의_만족도"]
