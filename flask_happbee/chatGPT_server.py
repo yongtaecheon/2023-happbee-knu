@@ -47,7 +47,6 @@ def chatGPT():
 
     return jsonify({"answer": answer})
 
-file_path='./survey_list.json'
 def load_survey(sur_dic, index):
   survey_list=[] 
   j=1
@@ -86,9 +85,11 @@ def load_survey(sur_dic, index):
     j+=1
   return survey_list
 
+
 @app.route('/request-survey', methods=['GET'])
 def send_survey():
-  with open(file_path,'r') as f:
+  file_path= './survey_list.json'
+  with open(file_path,'r', encoding='UTF8') as f:
     text_dic=json.load(f)
   idx = ["경제","관계","자유","감정","삶의_만족도"]
   sur=load_survey(text_dic, idx)

@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 
-//useEffect : 웹을 처음 실행할 때만 데이터를 받아오는 작업을 실행
-//fetch : 주소에 있는 데이터 GET
+// useEffect : 웹을 처음 실행할 때만 데이터를 받아오는 작업을 실행
+// fetch : 주소에 있는 데이터 GET
 // response 객체의 json() 이용하여 json 데이터를 객체로 변화
+
 function CreateUser({ question, onChange, onCreate }) {
   return (
     <div className="ChatInputContainer">
@@ -74,7 +75,7 @@ export default function Chat() {
         question: userInput,
         answer: data.answer,
       };
-      setUsers([...users, user]);//(users.concat(user));
+      setUsers([...users, user]); //(users.concat(user));
       setUserInput("");
       nextId.current += 1;
 
