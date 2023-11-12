@@ -28,7 +28,7 @@ export default function SurveyList() {
   const nextID = parseInt(surveyID) + 1;
   const [happ, setHapp] = useState(0);
   const handleWeight = (k) => {
-    console.log(statscore)
+          console.log(statscore)
     setHapp((current) => current + (k) * parseFloat(surveys[surveyID].wei))
     if ((surveyID == 0) || (surveyID == 1)){
       setStatscore((prevStatscore) => [prevStatscore[0] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4]]);
@@ -45,7 +45,23 @@ export default function SurveyList() {
     else{
       setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4] + (k) * parseFloat(surveys[surveyID].wei)]);
     }
-    console.log(statscore)
+
+    if (nextID === 14){
+      fetch(`/save_cat?happ=${happ}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch(error => {
+          console.error('Error sending data:', error);
+        });
+    }
+
     const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
     navigate(
       targetPage, {
