@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  api_key="",  # this is also the default, it can be omitted
+  api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
 )
 
 chat_count = 0
@@ -29,7 +29,8 @@ def gauge_level():
 @app.route('/ask', methods=['POST'])
 def chatGPT():
     userInput = request.json['user_input']
-
+    global chat_count
+    chat_count = chat_count+1
     # Call the chat GPT API
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
