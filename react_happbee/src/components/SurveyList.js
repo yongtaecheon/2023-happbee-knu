@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function SurveyList() {
   const [surveys, setSurveys] = useState('');
+  const [statscore, setStatscore] = useState([0, 0, 0, 0, 0])
   useEffect(() => {
     fetchData();
   }, []);
@@ -25,16 +26,33 @@ export default function SurveyList() {
   const nextID = parseInt(surveyID) + 1;
   const [happ, setHapp] = useState(0);
   const handleWeight = (k) => {
-    console.log('시발'+k);
-    // setHapp((current) => current + i * parseInt(surveys[surveyID].wei))
+    setHapp((current) => current + (k) * parseFloat(surveys[surveyID].wei))
+    if ((surveyID == 0) || (surveyID == 1)){
+      setStatscore((prevStatscore) => [prevStatscore[0] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4]]);
+    }
+    else if((surveyID == 2) || (surveyID == 3)){
+      setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[2], prevStatscore[3], prevStatscore[4]]);
+    }
+    else if ((surveyID == 4) || (surveyID == 5)){
+      setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[3], prevStatscore[4]]);
+    }
+    else if ((surveyID == 6) || (surveyID == 7)||(surveyID ==8) ||(surveyID==9)){
+      setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[4]]);
+    }
+    else{
+      setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4] + (k) * parseFloat(surveys[surveyID].wei)]);
+    }
+    
   };
 
   function buttons() {
     const arr = [];
     for (let i = 1; i <= 10; i++){
+      const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
+
       arr.push(
-        <Link to={`/survey/${nextID}`}>
-          <Button className="surveyButton m-2" variant="secondary" size="lg" onClick={handleWeight(i)}>{i}</Button>
+        <Link to={{pathname:targetPage, state:{statscore}}}>
+          <Button className="surveyButton m-2" variant="secondary" size="lg" onClick={() =>handleWeight(i)}>{i}</Button>
         </Link>
       );
     }
@@ -43,7 +61,6 @@ export default function SurveyList() {
 
   return (
     <div className="SurveyList">
-      <p>현재 행복지수 {happ}</p>
       <Button variant="dark" size="sm">
             Happbee 지수 {nextID} / 14
       </Button>
