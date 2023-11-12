@@ -24,3 +24,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
 1) **React and Flask** - Web Library&Framework
 2) **Prompt Engineering** - AI NLP
 3) **OLS Method** - Data Analysis
+
+#5. YOUTUBE
+---
+https://youtu.be/MBpvx8zbeT4
