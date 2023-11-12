@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  api_key="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",  # this is also the default, it can be omitted
+  api_key="",  # this is also the default, it can be omitted
 )
 
 @app.route('/ask', methods=['POST'])
