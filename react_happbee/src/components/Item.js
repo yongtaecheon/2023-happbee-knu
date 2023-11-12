@@ -31,31 +31,47 @@ export default function Item() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, );
 
     const fetchData = async () => {
         try {
           const response = await fetch('/cat'); // Update the URL based on your Flask server
-          const score = await response.json();
+          const score = await response.json(); 
           setHappy(score);
-          setCat(change_cat(happy))
-    
         } catch (error) {
           console.error('Error fetching data:', error);
         }
-      };
+    };
     
-    function change_cat(n) {
-        if (n <= 50) return cat_1;
-        else if (n <= 100) return cat_2;
-        else if (n <= 150) return cat_3;
-        else if (n <= 200) return cat_4;
-        else return cat_5;
-    }
-    
-    const [selectedItem, setSelectedItem] = useState(cat_3);
-    const [selelctedCatem, setSelectedCatem] = useState(null);
+    useEffect(() => {
+        setCat(change_cat(happy)); console.log(cat);
+    }, [happy]);
 
+    const change_cat = (n) => {
+        n = parseInt(n); // console.log(n);
+
+        if (n <= 50) {
+            console.log(n);
+            return cat_1;
+        }
+        else if (n <= 100) {
+            return cat_2;
+        }
+        else if (n <= 150) {
+            return cat_3;
+        }
+        else if (n <= 200) {
+            return cat_4;
+        }
+        else {
+            return cat_5;
+        }
+    }
+
+    const [selectedItem, setSelectedItem] = useState(cat);
+    const [selectedCatem, setSelectedCatem] = useState(null);
+    
+    const cats = [cat_1, cat_2, cat_3, cat_4, cat_5];
     const items = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8]
     const catem = [catem_1, catem_2, catem_3, catem_4, catem_5, catem_6, catem_7, catem_8]
     
@@ -67,14 +83,14 @@ export default function Item() {
     return(
         <div className="Main d-flex">
             <div className="Character container">
-                <img className="cat_3" width="80%" src={selectedItem}></img>
+                <img className="cat_3" width="80%" src={selectedItem} alt="Cat"></img>
             </div>
             <div className="Char_Item container" >
                 <Row xs={1} md={2} className="g-4">
                     {items.map((item, index) => (
                         <Col key={index}>
                             <Card onClick={() => handleCardClick(index)}>
-                                <Card.Img variant="top" src={items[index]} />
+                                <Card.Img variant="top" src={items[index]} alt={`Item ${index + 1}`} />
                             </Card>
                             <br></br>
                         </Col>

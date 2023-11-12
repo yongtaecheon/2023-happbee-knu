@@ -26,7 +26,7 @@ current_happ = 150
 @app.route('/cat', methods=['GET'])
 def get_cat_status():
     global current_happ
-    return current_happ
+    return jsonify(current_happ)
 
 @app.route('/save_cat', methods=['GET'])
 def save_data():
