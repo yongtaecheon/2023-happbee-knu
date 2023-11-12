@@ -22,7 +22,6 @@ import cat_2 from '../assets/cat_2.jpeg';
 import cat_4 from '../assets/cat_4.jpeg';
 import cat_5 from '../assets/cat_5.jpeg';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 export default function Item() {
