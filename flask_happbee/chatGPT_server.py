@@ -73,18 +73,24 @@ def load_survey(sur_dic, index):
     if i in '감정':
       emo_list=random.sample(sur_dic[i],4)
       for x in range (len(emo_list)):
-        values=[j,emo_list[x] ,2.76]
+        values=[j,emo_list[x] ,2.5]
         d=dict(zip(keys, values))
         survey_list.append(d)
     if i in '삶의 만족도':
       sat_list=random.sample(sur_dic[i],4)
       for x in range (len(sat_list)):
-        values=[j,sat_list[x] ,2.76]
+        values=[j,sat_list[x] ,2.5]
         d=dict(zip(keys, values))
         survey_list.append(d)
     j+=1
   return survey_list
 
+@app.route('/request-score', methods=['GET'])
+def send_mean_score():
+  path = 'score_mean.json'
+  with open(path, 'r', encoding='UTF8') as f:
+    score = json.load(f)
+  return jsonify(score)
 
 @app.route('/request-survey', methods=['GET'])
 def send_survey():

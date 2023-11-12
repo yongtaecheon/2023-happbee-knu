@@ -18,7 +18,7 @@ export default function SurveyList() {
       const response = await fetch('/request-survey'); // Update the URL based on your Flask server
       const jsonData = await response.json();
       setSurveys(jsonData);//id, qu, wei
-      console.log(surveys)
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -28,6 +28,7 @@ export default function SurveyList() {
   const nextID = parseInt(surveyID) + 1;
   const [happ, setHapp] = useState(0);
   const handleWeight = (k) => {
+    console.log(statscore)
     setHapp((current) => current + (k) * parseFloat(surveys[surveyID].wei))
     if ((surveyID == 0) || (surveyID == 1)){
       setStatscore((prevStatscore) => [prevStatscore[0] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4]]);
@@ -38,12 +39,13 @@ export default function SurveyList() {
     else if ((surveyID == 4) || (surveyID == 5)){
       setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[3], prevStatscore[4]]);
     }
-    else if ((surveyID == 6) || (surveyID == 7)||(surveyID ==8) ||(surveyID==9)){
+    else if ((surveyID == 6) || (surveyID == 7) || (surveyID ==8) || (surveyID==9)){
       setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3] + (k) * parseFloat(surveys[surveyID].wei), prevStatscore[4]]);
     }
     else{
       setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4] + (k) * parseFloat(surveys[surveyID].wei)]);
     }
+    console.log(statscore)
     const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
     navigate(
       targetPage, {
@@ -68,6 +70,9 @@ export default function SurveyList() {
 
   return (
     <div className="SurveyList">
+      <div>
+      <canvas id="myChart"></canvas>
+      </div>
       <Button variant="dark" size="sm">
             Happbee 지수 {nextID} / 14
       </Button>
