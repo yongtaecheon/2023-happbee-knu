@@ -17,6 +17,15 @@ client = OpenAI(
   api_key="",  # this is also the default, it can be omitted
 )
 
+chat_count = 0
+
+@app.route('/request-gauge-level', methods=['GET'])
+def gauge_level():
+   gauge = (chat_count%10) * 10
+   level = int(chat_count/10)
+   print ('request gauge,level: {},{},{}'.format(chat_count, gauge,level))
+   return jsonify({"chat_count": chat_count, "gauge":gauge, "level":level})
+
 @app.route('/ask', methods=['POST'])
 def chatGPT():
     userInput = request.json['user_input']
