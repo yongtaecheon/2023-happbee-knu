@@ -302,3 +302,18 @@ ul {
 
 }
 
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Add spacing between the charts if needed */
+}
+
+.chart {
+  height: 300px; /* Adjust as needed */
+  width: 500px; /* Adjust as needed */
+  /* Add other chart-specific styles here */
+}
+
+.card{
+  width: 30%;
+}
