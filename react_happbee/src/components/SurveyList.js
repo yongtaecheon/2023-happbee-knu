@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function SurveyList() {
   const [surveys, setSurveys] = useState('');
   const [statscore, setStatscore] = useState([0, 0, 0, 0, 0])
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -42,17 +44,23 @@ export default function SurveyList() {
     else{
       setStatscore((prevStatscore) => [prevStatscore[0], prevStatscore[1], prevStatscore[2], prevStatscore[3], prevStatscore[4] + (k) * parseFloat(surveys[surveyID].wei)]);
     }
+    const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
+    navigate(
+      targetPage, {
+      state:
+        {
+          happ: happ,
+          statscore: statscore
+        }
+      }
+    );
   };
 
   function buttons() {
     const arr = [];
     for (let i = 1; i <= 10; i++){
-      const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
-
       arr.push(
-        <Link to={{pathname:targetPage, state:{statscore}}}>
           <Button className="surveyButton m-2" variant="secondary" size="lg" onClick={() =>handleWeight(i)}>{i}</Button>
-        </Link>
       );
     }
     return arr;
