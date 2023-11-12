@@ -1,0 +1,42 @@
+[
+  {
+    "age": "20",
+    "total": "52",
+    "life_satisfaction": "58",
+    "meaning_of_life": "55",
+    "stress": "60",
+    "emotional_balance": "53"
+  },
+  {
+    "age": "30",
+    "total": "54",
+    "life_satisfaction": "58",
+    "meaning_of_life": "56",
+    "stress": "61",
+    "emotional_balance": "54"
+  },
+  {
+    "age": "40",
+    "total": "54",
+    "life_satisfaction": "60",
+    "meaning_of_life": "58",
+    "stress": "63",
+    "emotional_balance": "54"
+  },
+  {
+    "age": "50",
+    "total": "58",
+    "life_satisfaction": "63",
+    "meaning_of_life": "62",
+    "stress": "58",
+    "emotional_balance": "58"
+  },
+  {
+    "age": "60",
+    "total": "55",
+    "life_satisfaction": "62",
+    "meaning_of_life": "57",
+    "stress": "57",
+    "emotional_balance": "55"
+  }
+]
