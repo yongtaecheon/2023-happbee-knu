@@ -83,16 +83,14 @@ export default function Item() {
         <div className="Main d-flex">
             <div className="Character container">
                 <img className="cat_3" width="80%" src={selectedItem} alt="Cat"></img>
+                <div class="bubble b r hb">안뇽!!<br/>날 꾸며죠*^^*</div>
             </div>
             <div className="Char_Item container" >
                 <Row xs={1} md={2} className="g-4">
                     {items.map((item, index) => (
-                        <Col key={index}>
-                            <Card onClick={() => handleCardClick(index)}>
-                                <Card.Img variant="top" src={items[index]} alt={`Item ${index + 1}`} />
-                            </Card>
-                            <br></br>
-                        </Col>
+                        <Card className="item_card" onClick={() => handleCardClick(index)}>
+                            <Card.Img className="it" variant="top" src={items[index]} />
+                        </Card>
                     ))}
                 </Row>
             </div>
