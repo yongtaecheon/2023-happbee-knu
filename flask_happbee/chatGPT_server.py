@@ -14,8 +14,7 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  # api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
-  api_key="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"
+  api_key=os.getenv('OPENAI_API_KEY'),  # this is also the default, it can be omitted
 )
 
 chat_count = 0
