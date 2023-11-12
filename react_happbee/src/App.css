@@ -279,6 +279,7 @@ button:hover {
 }
 .chattingStart{
   margin: 20px 0px 0px 0px;
+  padding: 20px 20px;
 }
 .main2{
   margin: auto;
@@ -290,7 +291,8 @@ button:hover {
   margin: 20px 0px 0px 0px;
 }
 .itemButton{
-  margin: 40px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
+  padding: 20px 20px;
 }
 
 ul {
