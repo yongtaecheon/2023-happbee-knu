@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cat_3 from '../assets/cat_3.jpeg';
 import { Link } from 'react-router-dom';

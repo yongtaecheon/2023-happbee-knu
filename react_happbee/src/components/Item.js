@@ -23,38 +23,38 @@ export default function Item(){
                 <Row xs={1} md={2} className="g-4">
                     <Col>
                         <Card className="card" >
-                            <Card.Img variant="top" src={item_1} />
+                            <Card.Img className="it" variant="top" src={item_1} />
                         </Card>
                         <br></br>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_2} />
+                            <Card.Img className="it" variant="top" src={item_2} />
                         </Card>
                     </Col>
                     <Col>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_3} />
+                            <Card.Img className="it" variant="top" src={item_3} />
                         </Card>
                         <br></br>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_4} />
+                            <Card.Img className="it" variant="top" src={item_4} />
                         </Card>
                     </Col>
                     <Col>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_5} />
+                            <Card.Img className="it" variant="top" src={item_5} />
                         </Card>
                         <br></br>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_6} />
+                            <Card.Img className="it" variant="top" src={item_6} />
                         </Card>
                     </Col>
                     <Col>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_7} />
+                            <Card.Img className="it" variant="top" src={item_7} />
                         </Card>
                         <br></br>
                         <Card className="card">
-                            <Card.Img variant="top" src={item_8} />
+                            <Card.Img className="it" variant="top" src={item_8} />
                         </Card>
                     </Col>
                 </Row>

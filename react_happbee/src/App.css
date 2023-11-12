@@ -315,7 +315,10 @@ ul {
 }
 
 .card{
-  width: 40%;
+  width: 43%;
   height: 15vh;
-  place-items: center;
+  margin: auto;
+}
+.it{
+  margin: auto;
 }
