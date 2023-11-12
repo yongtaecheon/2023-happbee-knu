@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AiOutlineEnvironment, AiOutlinePhone } from "react-icons/ai";
 
 export default function Hosp() {
   const [hosps, setHosps] = useState('');
@@ -23,11 +24,11 @@ export default function Hosp() {
       arr.push(
         <div className="col-sm-6 mb-3 mb-sm-0">
           <div className="card mb-3">
-            <h5 className="card-header">{hosps && hosps[i][1]}</h5>
+            <h5 className="card-header">{hosps && hosps[i][0]}</h5>
             <div className="card-body">
               <blockquote className="blockquote mb-0">
-                <p>{hosps && hosps[i][0]}</p>
-                <footer className="blockquote-footer">{hosps && hosps[i][2]}</footer>
+                <p>{hosps && hosps[i][1]} </p>
+                <footer className="blockquote-footer">{hosps && hosps[i][2]}  <AiOutlinePhone /></footer>
               </blockquote>
             </div>
           </div>
@@ -38,7 +39,8 @@ export default function Hosp() {
   }
     return (
         <div className="Hosp">
-          <p className="font-big">현재 주소 : <br></br>{hosps && hosps[0]}</p>
+          <p className='handwriting'>당신이 힘들 때, 우리는 여기 있어요<br></br>어떤 어려움이든 함께 극복해 나가요</p>
+          <p className="font"><AiOutlineEnvironment />현재 위치 : {hosps && hosps[0]}</p>
         <div className="row">
             {hosplist()}
           </div>

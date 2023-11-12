@@ -35,9 +35,9 @@ export default function Main()
                 <br></br>
                 <div className="titled">
                     <hr width="100%" color="gray" noshade/>
-                    <h1 classNmae="title_h1">안녕 사용자야</h1>
+                    <h1 className="title_h1">안녕 난 햅비냥.</h1>
                     <br></br>
-                    <h3 classNmae="title_h3">햅비냥과 대화해서 기분전환을 해봐~</h3>
+                    <h3 className="title_h3">나랑 이야기하면서 기분전환할래?</h3>
                     <hr width="100%" color="gray" noshade/>
                 </div>
                 <br></br>
