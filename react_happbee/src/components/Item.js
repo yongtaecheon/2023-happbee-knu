@@ -13,33 +13,6 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-// export default function Item(){
-//     return(
-//         <div className="Main d-flex">
-//             <div className="Character container">
-//                 <img className="cat_3" width="80%" src={cat_3}></img>
-//             </div>
-//             <div className="Char_Item container" >
-//                     <Card style={{ width: '20rem' }}>
-//                         <Card.Img variant="top" src={item_1} />
-//                     </Card>
-//                     <Card style={{ width: '20rem' }}>
-//                         <Card.Img variant="top" src={item_2} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_3} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_4} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_5} />
-//                     </Card>
-//             </div>
-//         </div>
-//     );
-// }
-
 export default function Item(){
     return(
         <div className="Main d-flex">
@@ -49,39 +22,39 @@ export default function Item(){
             <div className="Char_Item container" >
                 <Row xs={1} md={2} className="g-4">
                     <Col>
-                        <Card>
-                            <Card.Img variant="top" src={item_1} />
+                        <Card className="card" >
+                            <Card.Img className="it" variant="top" src={item_1} />
                         </Card>
                         <br></br>
-                        <Card>
-                            <Card.Img variant="top" src={item_2} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_2} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
-                            <Card.Img variant="top" src={item_3} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_3} />
                         </Card>
                         <br></br>
-                        <Card>
-                            <Card.Img variant="top" src={item_4} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_4} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
-                            <Card.Img variant="top" src={item_5} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_5} />
                         </Card>
                         <br></br>
-                        <Card>
-                            <Card.Img variant="top" src={item_6} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_6} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
-                            <Card.Img variant="top" src={item_7} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_7} />
                         </Card>
                         <br></br>
-                        <Card>
-                            <Card.Img variant="top" src={item_8} />
+                        <Card className="card">
+                            <Card.Img className="it" variant="top" src={item_8} />
                         </Card>
                     </Col>
                 </Row>

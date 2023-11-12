@@ -93,11 +93,13 @@
 .Nav{
   margin:35px 15px 35px 35px;
   height: 92vh;
-  width: 10vw;
+  width: 9vw;
   border-radius: 25px;
   box-shadow: 4px 4px 5px 2px rgba(193, 193, 193, 0.38);
 }
-
+i{
+  font-size: 45px;
+}
 
 .Content{
   animation: slideDown .8s ease forwards;
@@ -312,4 +314,13 @@ ul {
   height: 300px; /* Adjust as needed */
   width: 500px; /* Adjust as needed */
   /* Add other chart-specific styles here */
+}
+
+.card{
+  width: 43%;
+  height: 15vh;
+  margin: auto;
+}
+.it{
+  margin: auto;
 }
