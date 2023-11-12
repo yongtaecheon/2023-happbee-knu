@@ -6,10 +6,13 @@ import Nav from './components/Nav';
 import Chat from './components/Chat';
 import Item from './components/Item'
 import Hosp from './components/Hosp';
+import SurveyResult from './components/SurveyResult';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+
 
 
 export default function App() {
@@ -26,6 +29,7 @@ export default function App() {
             <Route path="/chat" element={<Chat />} />
             <Route path="/item" element={<Item />} />
             <Route path="/hosp" element={<Hosp />} />
+            <Route path="/result" element={<SurveyResult />} />
           </Routes>
         </BrowserRouter>
       </div>

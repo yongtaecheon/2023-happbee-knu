@@ -128,29 +128,153 @@
   font-size:15px;
 }
 
-.title_But{
-  margin: 0px 50px 0px 0px;
-}
-.titled{
-  margin: 80px 0px 80px 0px;
-  /*font-family: 'Dovemayo_gothic';*/
-}
-.chattingStart{
-  margin: 0px 0px 0px 0px;
-}
-.ga_image{
-  margin: 0px 0px 0px 130px;
-}
-.cat_3{
-  margin: 130px 0px 0px 0px;
-}
-.gauge{
-  margin : 50px 0px 0px 0px;
-}
-.itemButton{
-  margin: 55px 0px 0px 0px;
+.ChatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
 }
 
-i{
-  font-size:35px;
+
+.ChatHeader {
+  padding-top: 20px;
+  text-align: center;
+  color: #333;
+  
 }
+
+.ChatContent {
+  padding-top: 20px;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow content to scroll if it exceeds the height */
+  padding-bottom: 60px; /* Adjust as needed to account for the input container's height */
+}
+
+.ChatQuestion,
+.ChatAnswer {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.ChatMessage {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.UserMessage  {
+  justify-content: flex-end;
+
+  padding-right: 40px;
+
+  color: #fff;
+}
+
+.HappbeeMessage  {
+
+  color: #fff;
+
+  padding-left: 40px;
+  justify-content: flex-start;
+}
+
+.SenderMessageBubble {
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+  background-color: #4caf50; /* 버블 배경색 추가 (사용자 메시지에 대한 예시) */
+  color: #fff; 
+}
+
+
+.GiverMessageBubble {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+  background-color: #D2691E; /* 버블 배경색 추가 (사용자 메시지에 대한 예시) */
+  color: #fff; 
+}
+
+.ChatInputContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.ChatContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+
+  max-height:fit-content;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 820px; /* Prompt height */
+
+  height: 100vh; /* Full height of the viewport */
+}
+
+.ProfileContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.ProfilePicture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("../public/images/main_logo.png"); 
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.ProfileInfo {
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
