@@ -49,38 +49,38 @@ export default function Item(){
             <div className="Char_Item container" >
                 <Row xs={1} md={2} className="g-4">
                     <Col>
-                        <Card>
+                        <Card className="card" >
                             <Card.Img variant="top" src={item_1} />
                         </Card>
                         <br></br>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_2} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_3} />
                         </Card>
                         <br></br>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_4} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_5} />
                         </Card>
                         <br></br>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_6} />
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_7} />
                         </Card>
                         <br></br>
-                        <Card>
+                        <Card className="card">
                             <Card.Img variant="top" src={item_8} />
                         </Card>
                     </Col>
