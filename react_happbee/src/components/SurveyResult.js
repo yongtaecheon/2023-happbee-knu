@@ -46,11 +46,11 @@ export default function SurveyResult() {
         datasets: [{
           label: '내 지수',
           data:[
-            statscore[0] / 2,
-            statscore[1] / 2,
-            statscore[2] / 2,
-            statscore[3] / 4,
-            statscore[4] / 4
+            statscore[0] / (2*2.06),
+            statscore[1] / (2*1.55),
+            statscore[2] / (2*0.88),
+            statscore[3] / (4*2.5),
+            statscore[4] / (3*2.5)
 
 
           ],
@@ -79,7 +79,7 @@ export default function SurveyResult() {
     if (existingChart) {
       existingChart.destroy();
     }
-    
+
     new Chart(ctx, {
       type: 'bar',
       data: {
@@ -94,10 +94,10 @@ export default function SurveyResult() {
         {
           label: '내 지수',
           data:[
-            statscore[1],
-            statscore[2],
-            statscore[3],
-            statscore[4]
+            statscore[1] / 41.2 * 100,
+            statscore[2] / 17.6 * 100,
+            statscore[3] / 100 * 100,
+            statscore[4] / 75 * 100
           ],
           backgroundColor: 'rgba(203,206,145,.5)',
           borderColor: 'rgba(203,206,145,1)',
