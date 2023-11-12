@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 
 
 export default function SurveyResult() {
