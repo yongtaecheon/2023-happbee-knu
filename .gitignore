@@ -1,6 +1,7 @@
 .env
 .DS_Store
-react_happbee/node_modules
+react_happbee/node_modules/*
+react_happbee/node_modules/
 venv_happbee/
 package-lock.json
-
+flask_happbee/package-lock.json

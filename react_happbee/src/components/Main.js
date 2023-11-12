@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cat_3 from '../assets/cat_3.jpeg';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,28 @@ import { Button } from 'react-bootstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import mainLogo from '../assets/main_logo.png';
 
+
 export default function Main()
 {
+    const [chatcount, setChatcount] = useState('');
+    const [gauge, setGauge] = useState('');
+    const [level, setLevel] = useState('');
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('/request-gauge-level'); // Update the URL based on your Flask server
+            const jsonData = await response.json();
+            setChatcount(parseInt(jsonData.chat_count));
+            setGauge(parseInt(jsonData.gauge));
+            setLevel(parseInt(jsonData.level));
+            console.log(jsonData.chat_count, jsonData.gauge, jsonData.level);
+        } catch (error) {
+        console.error('Error fetching data:', error);
+        }
+    };
     return (
         <div className="Main d-flex">
             <div className="main1">
@@ -25,9 +45,13 @@ export default function Main()
                         <Button className="chattingStart" variant="dark" size="lg" >햅비냥과 채팅</Button>{' '}
                 </Link>
             </div>
-           <div className="main2"> 
-                <img className="cat_3" width="80%" src={cat_3}></img>
-                <ProgressBar className="gauge"variant="info" now={60} label={`${60}%`}  />
+            <div className="main2"> 
+             <img className="cat_3" width="80%" src={cat_3}></img>
+                <div className="d-flex">
+                    <div className="col">햅비냥과 대화한 횟수: {chatcount}</div>
+                    <div className="col">햅비냥과의 친밀도: {level}</div>
+                </div>
+                <ProgressBar className="gauge" variant="secondary" now={gauge} label={`${gauge}%`} />
                 <br></br>
                 <Link to="/item">
                         <Button className="itemButton" variant="dark" size="lg" >햅비냥 꾸미기</Button>{' '}

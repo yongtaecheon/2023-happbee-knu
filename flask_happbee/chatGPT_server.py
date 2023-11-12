@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 import requests
 import os
 from dotenv import load_dotenv
@@ -14,13 +14,41 @@ app = Flask(__name__)
 
 # set api key
 client = OpenAI(
-  api_key="",  # this is also the default, it can be omitted
+
+  api_key='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'  # this is also the default, it can be omitted
 )
+
+chat_count = 0
+current_happ = 150
+
+
+
+@app.route('/cat', methods=['GET'])
+def get_cat_status():
+    global current_happ
+    return current_happ
+
+@app.route('/save_cat', methods=['GET'])
+def save_data():
+    happ = request.args.get('happ')
+    global current_happ
+    current_happ = happ
+    print(current_happ)
+    return current_happ
+
+
+@app.route('/request-gauge-level', methods=['GET'])
+def gauge_level():
+   gauge = (chat_count%10) * 10
+   level = int(chat_count/10)
+   print ('request gauge,level: {},{},{}'.format(chat_count, gauge,level))
+   return jsonify({"chat_count": chat_count, "gauge":gauge, "level":level})
 
 @app.route('/ask', methods=['POST'])
 def chatGPT():
     userInput = request.json['user_input']
-
+    global chat_count
+    chat_count = chat_count+1
     # Call the chat GPT API
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
