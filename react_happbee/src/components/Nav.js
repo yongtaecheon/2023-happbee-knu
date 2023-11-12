@@ -12,7 +12,7 @@ export default function Nav() {
         <hr/>
       <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item mt-5 mb-5">
-            <a href="/" className="nav-link active link" aria-current="page">
+            <a href="/main" className="nav-link active link" aria-current="page">
               <i class="bi bi-house-door"></i>
               <br></br>홈
             </a>
