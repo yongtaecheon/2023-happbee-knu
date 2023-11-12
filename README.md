@@ -1,13 +1,13 @@
 # 2023 KNU SW Hackaton - HAPPBEE
 
-![header](https://capsule-render.vercel.app/api?type=rounded&color=a8d5eb&height=200&section=header&text=미디어서버%20기반의%20WebRTC%20서비스&fontAlignY=45&desc=경북대학교%20컴퓨터학부%20종합설계프로젝트%201&descAlignY=65&fontSize=50&fontColor=363636&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=rounded&color=a8d5eb&height=200&section=header&text=HAPPBEE%201&descAlignY=65&fontSize=50&fontColor=363636&animation=fadeIn)
 
 ![main_logo](https://github.com/yongtaecheon/2023-happbee-knu/assets/42794553/4b3e8352-9e7e-46a7-9734-3960ec9912d2)
 
 
 ##1. TEAM: HAPPBEE
 ---
-| [<img src="https://github.com/kimseyun314.png" width="100px">](https://github.com/kimseyun314) | [<img src="https://github.com/EunJiKim02.png" width="100px">](https://github.com/EunJiKim02) | [<img src="https://github.com/mchaewon.png width="100px">](https://github.com/mchaewon) | [<img src="https://github.com/yongtaecheon.png" width="100px">](https://github.com/yongtaecheon) |
+| [<img src="https://github.com/kimseyun314.png" width="100px">](https://github.com/kimseyun314) | [<img src="https://github.com/EunJiKim02.png" width="100px">](https://github.com/EunJiKim02) | [<img src="https://github.com/mchaewon.png" width="100px">](https://github.com/mchaewon) | [<img src="https://github.com/yongtaecheon.png" width="100px">](https://github.com/yongtaecheon) |
 | :-----: | :-----: | :-----: | :-----: |
 | [김세연](https://github.com/kimseyun314) | [김은지](https://github.com/EunJiKim02) | [문채원](https://github.com/mchaewon) | [천용태](https://github.com/yongtaecheon) |
 
