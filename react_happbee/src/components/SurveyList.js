@@ -51,7 +51,7 @@ export default function SurveyList() {
       const targetPage = nextID === 14 ? '/result' : `/survey/${nextID}`;
 
       arr.push(
-        <Link to={{pathname:targetPage, state:{statscore}}}>
+        <Link to={{pathname:targetPage, state: { happ }}}>
           <Button className="surveyButton m-2" variant="secondary" size="lg" onClick={() =>handleWeight(i)}>{i}</Button>
         </Link>
       );
