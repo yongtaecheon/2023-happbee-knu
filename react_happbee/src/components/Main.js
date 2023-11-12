@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cat_3 from '../assets/cat_3.jpeg';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import mainLogo from '../assets/main_logo.png';
+
 
 export default function Main()
 {
