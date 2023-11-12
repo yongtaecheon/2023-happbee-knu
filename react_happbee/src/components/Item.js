@@ -13,33 +13,6 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-// export default function Item(){
-//     return(
-//         <div className="Main d-flex">
-//             <div className="Character container">
-//                 <img className="cat_3" width="80%" src={cat_3}></img>
-//             </div>
-//             <div className="Char_Item container" >
-//                     <Card style={{ width: '20rem' }}>
-//                         <Card.Img variant="top" src={item_1} />
-//                     </Card>
-//                     <Card style={{ width: '20rem' }}>
-//                         <Card.Img variant="top" src={item_2} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_3} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_4} />
-//                     </Card>
-//                     <Card style={{ width: '15rem' }}>
-//                         <Card.Img variant="top" src={item_5} />
-//                     </Card>
-//             </div>
-//         </div>
-//     );
-// }
-
 export default function Item(){
     return(
         <div className="Main d-flex">
