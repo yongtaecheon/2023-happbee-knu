@@ -11,6 +11,8 @@ export default function SurveyResult() {
   const [meanstat, setMeanstat] = useState([]);
   const [mean, setMean] = useState([]);
 
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,6 +31,14 @@ export default function SurveyResult() {
   useEffect(() => {
     // 차트 생성
     const ctx = document.getElementById('myChart');
+
+    const existingChart = Chart.getChart(ctx);
+
+    // If an existing Chart instance is found, destroy it
+    if (existingChart) {
+      existingChart.destroy();
+    }
+
     new Chart(ctx, {
       type: 'radar',
       data: {
@@ -41,6 +51,7 @@ export default function SurveyResult() {
             statscore[2] / 2,
             statscore[3] / 4,
             statscore[4] / 4
+
 
           ],
           backgroundColor: 'rgba(203,206,145,.5)',
@@ -61,6 +72,14 @@ export default function SurveyResult() {
   useEffect(() => {
     // 차트 생성
     const ctx = document.getElementById('Chart1');
+
+    const existingChart = Chart.getChart(ctx);
+
+    // If an existing Chart instance is found, destroy it
+    if (existingChart) {
+      existingChart.destroy();
+    }
+    
     new Chart(ctx, {
       type: 'bar',
       data: {
@@ -100,7 +119,7 @@ export default function SurveyResult() {
       <p className='font-big bolder'>나의 햅삐지수는 {Math.round(happ)}점 입니다</p>
       {/* {console.log(meanstat[0].total)} */}
       {/* <p>내 점수는 평균과 {Math.round(Math.abs(meanstat[0].total - happ))}점 차이나요.</p> */}
-      { 
+      {console.log(statscore)
       
       /* <p>점수 분석 결과: {statscore[0]} {statscore[1]} {statscore[2]} {statscore[3]} {statscore[4]}</p> */}
       <div className='chart-container'>
