@@ -88,7 +88,7 @@ def load_survey(sur_dic, index):
 
 @app.route('/request-survey', methods=['GET'])
 def send_survey():
-  file_path= './survey_list.json'
+  file_path= 'survey_list.json'
   with open(file_path,'r', encoding='UTF8') as f:
     text_dic=json.load(f)
   idx = ["경제","관계","자유","감정","삶의_만족도"]

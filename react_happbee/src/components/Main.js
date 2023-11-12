@@ -10,7 +10,7 @@ export default function Main()
 {
     return (
         <div className="Main d-flex">
-            <div className="title_But">
+            <div className="main1">
                 <img className="mainLogo" width="40%" src={mainLogo}></img>
                 <br></br>
                 <div className="titled">
@@ -25,7 +25,7 @@ export default function Main()
                         <Button className="chattingStart" variant="dark" size="lg" >햅비냥과 채팅</Button>{' '}
                 </Link>
             </div>
-           <div className="ga_image"> 
+           <div className="main2"> 
                 <img className="cat_3" width="80%" src={cat_3}></img>
                 <ProgressBar className="gauge"variant="info" now={60} label={`${60}%`}  />
                 <br></br>

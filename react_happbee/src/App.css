@@ -271,6 +271,28 @@ button:hover {
   margin-left: 10px;
 }
 
+.main1{
+  margin: auto;
+}
+.titled{
+  margin: 50px 0px 50px 0px; 
+}
+.chattingStart{
+  margin: 20px 0px 0px 0px;
+}
+.main2{
+  margin: auto;
+}
+.cat_3{
+  margin: 60px 0px 50px 0px; 
+}
+.gauge{
+  margin: 20px 0px 0px 0px;
+}
+.itemButton{
+  margin: 40px 0px 0px 0px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
