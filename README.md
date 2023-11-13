@@ -47,6 +47,11 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
     대답없이!!! 바로 질문 시작해!!!!!!!! 시작
     ```
     
+    * 프롬프트 적용 대화 예시
+      
+      <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/111948424/75cf9bff-d095-4468-9af7-3fb6d25850e3" width="400" height="500"/>
+
+    
     * 해당 프롬프트를 적용한 코드
     ```
     @app.route('/ask', methods=['POST'])
@@ -73,11 +78,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
     
         return jsonify({"answer": answer})
     ```
-    * 프롬프트 적용 대화 예시
-      
-      <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/111948424/75cf9bff-d095-4468-9af7-3fb6d25850e3" width="400" height="500"/>
-
-
+    
 #5. YOUTUBE
 ---
 https://youtu.be/MBpvx8zbeT4
