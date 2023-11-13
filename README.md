@@ -27,7 +27,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
 
   World Happiness Report가 행복 지수(Happiness Score)를 산정하는 6개의 요인들의 상관관계를 분석하고 이를 개인의 행복 지수를 산정하는 요인의 가중치로 사용하였습니다. 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/89b9e3c9-31ce-44fc-9ee5-26258e5f3d28/Untitled.png)
+![table](https://github.com/yongtaecheon/2023-happbee-knu/assets/80295096/950c1fa4-12c2-42a2-b416-cce28f371eaa)
 
 위 표는 상위 다섯 국가들의 2015년부터 2023년까지 지표의 head만 보인 표입니다. 지수들은 GDP, Family, Life, Freedom, Generosity, Trust 이고 이들의 영향으로 행복 지수가 결정됩니다. 
 
