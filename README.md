@@ -51,8 +51,9 @@ GDP가 0.8로 행복 지수와 가장 연관이 높고 0.76 Life가 높은 것�
 
 GDP, Family, Freedom 한국의 세 개 지수 값으로 OLS model로 Regression한 결과입니다.
 
-| GDP_Capita | 0.879583 |
+| Factor | Coefficient |
 | --- | --- |
+| GDP_Capita | 0.879583 |
 | Social_Relation | 1.547087 |
 | Free2Choice | 2.059342 |
 
