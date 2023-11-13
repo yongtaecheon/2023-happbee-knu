@@ -69,8 +69,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
     <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/4ecf967b-3209-4b3c-8df5-af32870dcd33" alt="image" width="700px" height="400px">
   
       
-
-
+<br>
 
    
 ### 2) **OLS Method** - Data Analysis
@@ -108,6 +107,10 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
   | Free2Choice | 2.059342 |
   
   위처럼 OLS 모델을 활용한 Regression 결과의 계수값들을 활용하여 개인의 행복 지수를 계산하였습니다.
+
+
+<br>
+
 
 ### 3) **Prompt Engineering** - AI NLP
    
