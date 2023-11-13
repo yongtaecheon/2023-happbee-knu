@@ -24,7 +24,40 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
 1) **React and Flask** - Web Library&Framework
    
 2) **OLS Method** - Data Analysis
-  
+
+  World Happiness Report가 행복 지수(Happiness Score)를 산정하는 6개의 요인들의 상관관계를 분석하고 이를 개인의 행복 지수를 산정하는 요인의 가중치로 사용하였습니다. 
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/89b9e3c9-31ce-44fc-9ee5-26258e5f3d28/Untitled.png)
+
+위 표는 상위 다섯 국가들의 2015년부터 2023년까지 지표의 head만 보인 표입니다. 지수들은 GDP, Family, Life, Freedom, Generosity, Trust 이고 이들의 영향으로 행복 지수가 결정됩니다. 
+
+## 여섯 지표들의 Correlation Matrix
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/26f036e4-28b3-4e14-85ac-8b313a160a6d/Untitled.png)
+
+GDP가 0.8로 행복 지수와 가장 연관이 높고 0.76 Life가 높은 것을 확인할 수 있었습니다. 하지만 GDP와 Life의 연관이 높기 때문에 GDP와 Family 그리고 Freedom을 행복 지수에 연관이 높은 지수로 선정하였습니다. 이와 더불어 한국(South Korea)은 6개의 요인 중에서 Freedom 지수가 다른 국가들과 비교했을 때 상당히 낮았기 때문에 중요 요인으로 선정하였습니다. 
+
+## 여섯 지표들의 PairPlot
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/247c25f0-5174-4deb-ad81-dcaec131afb9/Untitled.png)
+
+## Histogram X ScatterPlot
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/c5b27af5-d179-4f1f-ab89-210e7dd7ee29/Untitled.png)
+
+## OLS Regression Results - GDP, Family, Freedom
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/0bec5985-430f-4758-9440-e6569e48dfc7/Untitled.png)
+
+GDP, Family, Freedom 한국의 세 개 지수 값으로 OLS model로 Regression한 결과입니다.
+
+| GDP_Capita | 0.879583 |
+| --- | --- |
+| Social_Relation | 1.547087 |
+| Free2Choice | 2.059342 |
+
+위처럼 OLS 모델을 활용한 Regression 결과의 계수값들을 활용하여 개인의 행복 지수를 계산하였습니다.
+
 3) **Prompt Engineering** - AI NLP
    
     openAI의 chatGPT API(gpt-3.5-turbo)를 이용하여 공감 챗봇 서비스를 구현하였다. 공감이라는 서비스 목적에 맞는 chatGPT의 답변을 이끌어내기 위해 프롬프트 엔지니어링 기술을 사용하였다.
