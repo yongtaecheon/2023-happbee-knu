@@ -28,13 +28,13 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
   - Main.js : 메인화면
       
       햅비냥과 대화를 할 때마다 햅비냥의 게이지가 올라갑니다. 게이지가 모두 채워지면 햅비냥과의 친밀도가 상승합니다. ‘햅비냥과 채팅’, ‘햅비냥 꾸미기’ 버튼을 이용해 햅비냥과 상호작용할 수 있습니다.  
-      <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/adde43f9-d368-4866-b2cf-27c6fa38325c" alt="image" width="800px" height="450px">
+      <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/adde43f9-d368-4866-b2cf-27c6fa38325c" alt="image" width="700px" height="400px">
       
   - SurveyList.js : 행복 자가진단 테스트(햅비지수) 및 분석
       
       경제, 관계, 자유, 감정, 삶의 만족도 항목을 평가하기 위해 무작위로 14개의 질문이 사용자에게 주어집니다. 각 항목마다 1~10 사이의 숫자를 선택할 수 있으며, 이를 통해 사용자의 상태를 진단합니다.  
       
-    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/a96f5957-b50b-428a-a62a-8d570fc4ab0c" alt="image" width="800px" height="450px">
+    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/a96f5957-b50b-428a-a62a-8d570fc4ab0c" alt="image" width="700px" height="400px">
   
       
   
@@ -42,7 +42,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
       
       설문이 종료되면 나의 행복지수(햅비지수)를 확인할 수 있습니다. 나의 분석 결과 뿐만 아니라, 다른 사람들의 평균 수치와 비교할 수 있습니다. 
   
-    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/29fcb318-f213-40bc-9f1d-3e2d68736622" alt="image" width="800px" height="450px">
+    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/29fcb318-f213-40bc-9f1d-3e2d68736622" alt="image" width="700px" height="400px">
   
       
   
@@ -50,7 +50,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
       
       햅비냥과 고민 상담을 할 수 있습니다. 햅비냥은 prompt engineering 으로 고민 상담에 최적화된 AI 챗봇입니다. 사용자의 고민을 듣고 해결책과 위로를 들으면서 마음 치유를 할 수 있습니다. 
   
-    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/37486d16-0d06-4455-a782-44d3d9d21470" alt="image" width="800px" height="450px">
+    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/37486d16-0d06-4455-a782-44d3d9d21470" alt="image" width="700px" height="400px">
   
   
   - Item.js : 햅비냥 꾸미기
@@ -58,7 +58,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
         
       내 햅비냥을 꾸밀 수 있는 공간입니다. 현재 기본 꾸미기 아이템이 지급되어 있으며, 내 햅비냥에게 다양한 악세사리를 착용해볼 수 있습니다.  
   
-    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/fada4560-15ba-4d64-8dfa-b2d5103da419" alt="image" width="800px" height="450px">
+    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/fada4560-15ba-4d64-8dfa-b2d5103da419" alt="image" width="700px" height="400px">
   
   
       
@@ -66,7 +66,7 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
   
     현재 위치를 기반으로 사용자 주변 심리 상담센터의 이름, 위치, 전화번호를 제공합니다. 때론, 혼자보다 전문가의 진단 및 상담이 필요한 경우가 있습니다. 사용자들에게 상담센터 정보를 제공하여 적절한 시기에 치료를 할 수 있도록 도와줄 수 있습니다.
   
-    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/4ecf967b-3209-4b3c-8df5-af32870dcd33" alt="image" width="800px" height="450px">
+    <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/87495422/4ecf967b-3209-4b3c-8df5-af32870dcd33" alt="image" width="700px" height="400px">
   
       
 
