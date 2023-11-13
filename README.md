@@ -23,8 +23,12 @@ OLS회귀분석으로 가중치 선정을 통해 행복 테스트 분석을 진�
 ---
 1) **React and Flask** - Web Library&Framework
    
-2) **Prompt Engineering** - AI NLP
+2) **OLS Method** - Data Analysis
+  
+4) **Prompt Engineering** - AI NLP
+   
 chatGPT API를 이용하여 공감 챗봇 서비스를 구현하였다. 공감이라는 서비스 목적에 맞는 chatGPT의 답변을 이끌어내기 위해 프롬프트 엔지니어링 기술을 사용하였다.
+
 사용한 프롬프트 : 
 
     ```
@@ -42,8 +46,6 @@ chatGPT API를 이용하여 공감 챗봇 서비스를 구현하였다. 공감�
    
     대답없이!!! 바로 질문 시작해!!!!!!!! 시작
     ```
-
-4) **OLS Method** - Data Analysis
 
 #5. YOUTUBE
 ---
