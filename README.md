@@ -73,9 +73,8 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
     
         return jsonify({"answer": answer})
     ```
-  * 프롬프트 적용 대화 예시
-    
-  ![image](https://github.com/yongtaecheon/2023-happbee-knu/assets/111948424/75cf9bff-d095-4468-9af7-3fb6d25850e3)
+    * 프롬프트 적용 대화 예시
+      <img src="https://github.com/yongtaecheon/2023-happbee-knu/assets/111948424/75cf9bff-d095-4468-9af7-3fb6d25850e3" width="200" height="300"/>
 
 
 #5. YOUTUBE
