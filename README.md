@@ -16,13 +16,13 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
 
 #3. 프로젝트 한 줄 설명
 ---
-행복 자가진단 테스트 및 분석을 통해 사용자에게 대한 깊이 있는 분석 및 이해를 제공하며, 고양이 챗봇 서비스를 통해 사용자에게 공감 및 위로 전달합니다.
+행복 테스트 분석과 챗봇 서비스를 통해 사용자에게 공감 및 위로 전달
 
 
 #4. 프로젝트에 활용된 기술
 ---
 1) **React and Flask** - Web Library&Framework
-2) **Prompt Engineering** - AI NLP
+2) **Prompt Engineering** - AI NLP 
 3) **OLS Method** - Data Analysis
 
 #5. YOUTUBE
