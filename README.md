@@ -33,21 +33,21 @@ C타입 - 행복 자가 진단 테스트와 공감 챗봇 고양이를 통한 �
 
 ## 여섯 지표들의 Correlation Matrix
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/26f036e4-28b3-4e14-85ac-8b313a160a6d/Untitled.png)
+![cor_matrix](https://github.com/yongtaecheon/2023-happbee-knu/assets/80295096/c7865b3a-efe0-4ea5-b24f-a5321af0dbf8)
 
 GDP가 0.8로 행복 지수와 가장 연관이 높고 0.76 Life가 높은 것을 확인할 수 있었습니다. 하지만 GDP와 Life의 연관이 높기 때문에 GDP와 Family 그리고 Freedom을 행복 지수에 연관이 높은 지수로 선정하였습니다. 이와 더불어 한국(South Korea)은 6개의 요인 중에서 Freedom 지수가 다른 국가들과 비교했을 때 상당히 낮았기 때문에 중요 요인으로 선정하였습니다. 
 
 ## 여섯 지표들의 PairPlot
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/247c25f0-5174-4deb-ad81-dcaec131afb9/Untitled.png)
+![pariplot](https://github.com/yongtaecheon/2023-happbee-knu/assets/80295096/c7e0cecb-c4cc-442c-a8f3-4141d007052a)
 
 ## Histogram X ScatterPlot
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/c5b27af5-d179-4f1f-ab89-210e7dd7ee29/Untitled.png)
+![hist_plot](https://github.com/yongtaecheon/2023-happbee-knu/assets/80295096/1e30876f-3774-49d5-8e70-48e877bb3ee4)
 
 ## OLS Regression Results - GDP, Family, Freedom
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d857052-a0cf-4ff5-94b1-40b35cfb202c/0bec5985-430f-4758-9440-e6569e48dfc7/Untitled.png)
+![ols](https://github.com/yongtaecheon/2023-happbee-knu/assets/80295096/ccc224f1-cccc-46c6-a832-2378e7692558)
 
 GDP, Family, Freedom 한국의 세 개 지수 값으로 OLS model로 Regression한 결과입니다.
 
